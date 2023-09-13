@@ -7,7 +7,7 @@ public class Principal {
         titular1.documento = "12346886";
 
         Pessoa titular2 = new Pessoa();
-        titular2.nome = "Agatha";
+        titular2.nome = "Agatha Ramires";
         titular2.documento = "87654567876";
 
         Conta minhaConta = new Conta(titular1,123, 987);
