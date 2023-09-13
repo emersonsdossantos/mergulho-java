@@ -1,3 +1,5 @@
+package com.algaworks.banco.modelo;
+
 import java.util.Objects;
 
 public class Conta {
@@ -10,21 +12,21 @@ public class Conta {
     Conta(){
     }
 
-    Conta(Pessoa titular, int agencia, int numero){
+    public Conta(Pessoa titular, int agencia, int numero){
         Objects.requireNonNull(titular);
         this.titular = titular;
         this.agencia = agencia;
         this.numero = numero;
     }
 
-    void depositar(double valor){
+    public void depositar(double valor){
         if (valor <= 0){
             throw new IllegalArgumentException("O valor depositado de ser a cima de 0");
         }
         saldo = saldo + valor;
     }
 
-    void sacar(double valor){
+    public void sacar(double valor){
         if (saldo - valor <= 0){
             throw new IllegalStateException("Saldo Insulficiente");
         }
@@ -34,7 +36,7 @@ public class Conta {
         saldo = saldo - valor;
     }
 
-    void sacarComTaxa(double valor, double taxa){
+    public void sacarComTaxa(double valor, double taxa){
         sacar(valor + taxa);
     }
 

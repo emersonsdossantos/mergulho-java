@@ -1,3 +1,8 @@
+package com.algaworks.banco.app;
+
+import com.algaworks.banco.modelo.Conta;
+import com.algaworks.banco.modelo.Pessoa;
+
 public class Principal {
 
     public static void main(String[] args) {

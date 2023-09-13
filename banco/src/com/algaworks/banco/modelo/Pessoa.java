@@ -1,3 +1,5 @@
+package com.algaworks.banco.modelo;
+
 public class Pessoa {
 
     private String nome;
