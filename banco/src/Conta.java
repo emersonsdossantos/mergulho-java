@@ -2,10 +2,10 @@ import java.util.Objects;
 
 public class Conta {
 
-    Pessoa titular;
-    int agencia;
-    int numero;
-    double saldo;
+    private Pessoa titular;
+    private int agencia;
+    private int numero;
+    private double saldo;
 
     Conta(){
     }
@@ -37,4 +37,21 @@ public class Conta {
     void sacarComTaxa(double valor, double taxa){
         sacar(valor + taxa);
     }
+
+    public Pessoa getTitular() {
+        return titular;
+    }
+
+    public int getAgencia() {
+        return agencia;
+    }
+
+    public int getNumero() {
+        return numero;
+    }
+
+    public double getSaldo() {
+        return saldo;
+    }
+
 }
