@@ -27,11 +27,12 @@ public class Conta {
     }
 
     public void sacar(double valor){
-        if (saldo - valor <= 0){
-            throw new IllegalStateException("Saldo Insulficiente");
-        }
+
         if (valor <= 0){
             throw new IllegalArgumentException("O valor deve ser a cima de 0");
+        }
+        if (getSaldoDisponivel() - valor <= 0){
+            throw new IllegalStateException("Saldo Insulficiente");
         }
         saldo = saldo - valor;
     }
@@ -56,4 +57,7 @@ public class Conta {
         return saldo;
     }
 
+    public double getSaldoDisponivel(){
+        return getSaldo();
+    }
 }
