@@ -10,4 +10,11 @@ public class ContaInvestimento  extends Conta{
         double valorRendimentos = getSaldo() * percentualJuros / 100;
         depositar(valorRendimentos);
     }
+
+    @Override
+    public void debitarTarifaMensal(){
+        if (getSaldo() < 10_000){
+            sacar(30);
+        }
+    }
 }
