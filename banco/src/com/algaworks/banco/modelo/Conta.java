@@ -1,5 +1,7 @@
 package com.algaworks.banco.modelo;
 
+import com.algaworks.banco.modelo.excecao.SaldoInsuficienteException;
+
 import java.util.Objects;
 
 public abstract class Conta {
@@ -32,7 +34,7 @@ public abstract class Conta {
             throw new IllegalArgumentException("O valor deve ser a cima de 0");
         }
         if (getSaldoDisponivel() - valor <= 0){
-            throw new IllegalStateException("Saldo Insulficiente");
+            throw new SaldoInsuficienteException("Saldo Insuficiente");
         }
         saldo = saldo - valor;
     }
