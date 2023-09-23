@@ -3,7 +3,9 @@ package com.algaworks.banco.app;
 import com.algaworks.banco.modelo.Pessoa;
 
 import java.util.ArrayList;
+import java.util.HashSet;
 import java.util.List;
+import java.util.Set;
 
 public class Principal2 {
 
@@ -11,7 +13,8 @@ public class Principal2 {
         Pessoa pessoa1 = new Pessoa("Joao da Silva","327817" );
         Pessoa pessoa2 = new Pessoa("Maria das Couves","987654" );
 
-        List<Pessoa> pessoas = new ArrayList<>();
+//        List<Pessoa> pessoas = new ArrayList<>();
+        Set<Pessoa> pessoas = new HashSet<>();
         pessoas.add(pessoa1);
         pessoas.add(pessoa2);
 
