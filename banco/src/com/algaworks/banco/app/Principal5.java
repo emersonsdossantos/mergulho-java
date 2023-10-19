@@ -3,6 +3,7 @@ package com.algaworks.banco.app;
 import com.algaworks.banco.modelo.Banco;
 import com.algaworks.banco.modelo.Conta;
 
+import java.math.BigDecimal;
 import java.util.Optional;
 
 public class Principal5 {
@@ -19,8 +20,13 @@ public class Principal5 {
 //            System.out.println(contaEncontrada.getSaldo());
 //        }
 
-        Conta contaEncontrada = banco.buscar(123,225)
-                .orElseThrow(() -> new RuntimeException("Conta não encontrada"));
-        System.out.println(contaEncontrada.getSaldo());
+//        Conta contaEncontrada = banco.buscar(123,225)
+//                .orElseThrow(() -> new RuntimeException("Conta não encontrada"));
+//        System.out.println(contaEncontrada.getSaldo());
+
+        BigDecimal saldo = banco.buscar(123,229)
+                .map(Conta::getSaldo)
+                .orElse(BigDecimal.ZERO);
+        System.out.println(saldo);
     }
 }
