@@ -10,11 +10,17 @@ public class Principal5 {
     public static void main(String[] args) {
         Banco banco = new Banco();
 
-        Optional<Conta> contaOptional =  banco.buscar(123, 333);
+//        Optional<Conta> contaOptional =  banco.buscar(123, 222);
+//        banco.buscar(123, 222)
+//                .ifPresent(conta -> System.out.println(conta.getSaldo()));
 
-        if (contaOptional.isPresent()){
-            Conta contaEncontrada = contaOptional.get();
-            System.out.println(contaEncontrada.getSaldo());
-        }
+//        if (contaOptional.isPresent()){
+//            Conta contaEncontrada = contaOptional.get();
+//            System.out.println(contaEncontrada.getSaldo());
+//        }
+
+        Conta contaEncontrada = banco.buscar(123,225)
+                .orElseThrow(() -> new RuntimeException("Conta não encontrada"));
+        System.out.println(contaEncontrada.getSaldo());
     }
 }
